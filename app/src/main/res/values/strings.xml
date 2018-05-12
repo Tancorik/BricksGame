@@ -11,5 +11,7 @@
     <string name="threeButtonText">3</string>
     <string name="diceButtonText">Бросить кубик первого хода!</string>
     <string name="startCountBricksText">Начальное количество кирпичиков:</string>
-    <string name="restartTextButton" >Переиграть!</string>
+    <string name="restartTextButton">Переиграть!</string>
+    <string name="infoGame">Игра Кирпичики! \nИгрок с комьютером по-очереди
+        убирают по 1-3 кирпичика. Кто забрал последние тот выиграл!</string>
 </resources>

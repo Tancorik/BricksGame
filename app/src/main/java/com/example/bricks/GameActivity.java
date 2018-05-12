@@ -1,11 +1,8 @@
 package com.example.bricks;
 
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +13,8 @@ import java.util.Random;
 public class GameActivity extends AppCompatActivity {
 
     final String COUNT_BRICKS = "count bricks";
+    final String DIFFICULTY = "difficulty";
+    private int mDifficulty = 1;
     private int mCountBricks;
     protected TextView mCountBricksTextView;
     protected TextView mHelpTextView;
@@ -32,6 +31,7 @@ public class GameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mCountBricks = intent.getIntExtra(COUNT_BRICKS, 15);
+        mDifficulty = intent.getIntExtra(DIFFICULTY, 1);
 
         mHelpTextView = findViewById(R.id.helpTextView);
         mCountBricksTextView = findViewById(R.id.countBricksTextView);
@@ -41,6 +41,10 @@ public class GameActivity extends AppCompatActivity {
         mHistoryText.setText(String.valueOf(mCountBricks));
 
         mRestartButton = findViewById(R.id.restartButton);
+
+        if (mDifficulty==3) {
+            yourMove = false;
+        }
 
         gameManager();
     }
@@ -61,7 +65,6 @@ public class GameActivity extends AppCompatActivity {
             }
 
             if (move > mCountBricks) move = mCountBricks;
-            //Toast.makeText(getApplicationContext(), "Вы убрали " + move + " кирпичик(a)!", Toast.LENGTH_SHORT).show();
             mCountBricks -= move;
             mCountBricksTextView.setText(String.valueOf(mCountBricks));
             mHistoryText.append(" ->You("+move+")-> "+mCountBricks);
@@ -99,6 +102,7 @@ public class GameActivity extends AppCompatActivity {
                 mHelpTextView.setText("Андройд забрал последние кирпичики!");
             }
             mRestartButton.setVisibility(View.VISIBLE);
+
         }
 
     }
@@ -108,6 +112,12 @@ public class GameActivity extends AppCompatActivity {
         int move=0;
         if (mCountBricks<=3){
             move = mCountBricks % 4;
+        }
+        else if(mDifficulty == 2 && mCountBricks<16 && mCountBricks%4 != 0){
+            move = mCountBricks%4;
+        }
+        else if(mDifficulty == 3 && mCountBricks%4 != 0){
+            move = mCountBricks%4;
         }
         else {
             move = random.nextInt(3) + 1;
