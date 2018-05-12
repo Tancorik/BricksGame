@@ -84,12 +84,18 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/diceButton"
+        android:id="@+id/restartButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_24dp"
-        android:onClick="onClickDiceButton"
-        android:text="@string/diceButtonText"
+        android:onClick="onClickRestart"
+        android:text="@string/restartTextButton"
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/historyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="true" />
 
 </LinearLayout>

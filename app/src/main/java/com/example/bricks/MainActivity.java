@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    SeekBar mStartCountBricksSeekBar;
-    TextView mStartCountBricksTextView;
-    int mCountBricks;
-    final String COUNT_BRICKS = "count bricks";
+    private SeekBar mStartCountBricksSeekBar;
+    private TextView mStartCountBricksTextView;
+    private int mCountBricks;
+    private final String COUNT_BRICKS = "count bricks";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mStartCountBricksSeekBar = findViewById(R.id.startCountBricksSeekBar);
+        mStartCountBricksSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+
         mStartCountBricksTextView = findViewById(R.id.startCoutnBricksTextView);
 
         mCountBricks = mStartCountBricksSeekBar.getProgress() + 15;
         mStartCountBricksTextView.append(" "+ mCountBricks);
 
-        mStartCountBricksSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+
     }
 
     SeekBar.OnSeekBarChangeListener onSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
