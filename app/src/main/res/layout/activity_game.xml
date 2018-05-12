@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_8dp"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/tipTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tipText" />
+
+    <TextView
+        android:id="@+id/helpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:text="Тут подсказки будут" />
+
+    <TextView
+        android:id="@+id/headBricksTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_24dp"
+        android:text="@string/headBricksText"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/countBricksTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/padding_8dp"
+        android:textAlignment="center"
+        android:textSize="80sp"
+        tools:text="99" />
+
+    <TextView
+        android:id="@+id/howMuchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_24dp"
+        android:text="@string/howMuchText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/oneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:layout_weight="1"
+            android:onClick="onClickMoveButton"
+            android:text="@string/oneButtonText" />
+
+        <Button
+            android:id="@+id/twoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:layout_weight="1"
+            android:onClick="onClickMoveButton"
+            android:text="@string/twoButton" />
+
+        <Button
+            android:id="@+id/threeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:layout_weight="1"
+            android:onClick="onClickMoveButton"
+            android:text="@string/threeButtonText" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/diceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_24dp"
+        android:onClick="onClickDiceButton"
+        android:text="@string/diceButtonText"
+        android:visibility="invisible" />
+
+</LinearLayout>

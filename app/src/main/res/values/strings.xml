@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bricks</string>
+    <string name="welcomeText">Добро пожаловать в игру Кирпичики!</string>
+    <string name="startButtonText">Начать игру</string>
+    <string name="tipText">Подсказка:</string>
+    <string name="defaultHelpText" />
+    <string name="headBricksText">Количество кирпичиков в игре:</string>
+    <string name="howMuchText">Сколько кирпичиков убрать?</string>
+    <string name="oneButtonText">1</string>
+    <string name="twoButton">2</string>
+    <string name="threeButtonText">3</string>
+    <string name="diceButtonText">Бросить кубик первого хода!</string>
+    <string name="startCountBricksText">Начальное количество кирпичиков:</string>
+</resources>
